@@ -18,3 +18,4 @@ function ListaFavs({ favs, toggleFav }) {
 }
 
 export default ListaFavs;
+//quiero que cuando se muestre favoritos se oculte la lista normal y vice versa

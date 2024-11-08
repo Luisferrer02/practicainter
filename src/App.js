@@ -4,14 +4,14 @@ import ListaMain from './components/listamain';
 import Filter from './components/filtro';
 import md5 from 'crypto-js/md5';
 
+const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+const privateKey = process.env.REACT_APP_PRIVATE_KEY;
+const ts = Date.now().toString();
+const hash = md5(ts + privateKey + publicKey).toString();
+
 function App() {
   const [comics, setComics] = useState([]);
   const [filterText, setFilterText] = useState('');
-
-  const publicKey = process.env.REACT_APP_PUBLIC_KEY;
-  const privateKey = process.env.REACT_APP_PRIVATE_KEY;
-  const ts = Date.now().toString();
-  const hash = md5(ts + privateKey + publicKey).toString();
 
   useEffect(() => {
     const fetchComics = async () => {
@@ -37,5 +37,6 @@ function App() {
     </div>
   );
 }
+export { ts, hash, publicKey }; 
 
 export default App;
