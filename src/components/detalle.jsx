@@ -24,59 +24,36 @@ function DetalleComic({ comic, onClose }) {
             name: character.name,
             image: characterData.thumbnail
               ? `${characterData.thumbnail.path}.${characterData.thumbnail.extension}`
-              : null,
+              : "", // URL de la imagen del personaje
           };
         })
       );
       setCharactersWithImages(charactersDetails);
     };
 
-    if (comic.characters.items.length > 0) {
-      fetchAllCharacterDetails();
-    }
+    fetchAllCharacterDetails();
   }, [comic]);
 
   return (
-    <div className="detalle-comic-overlay">
-      <div className="detalle-comic-card">
-        <button className="close-button" onClick={onClose}>
-          Cerrar
-        </button>
-        <img
-          src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-          alt={comic.title}
-          className="detalle-comic-image"
-        />
-        <h2>{comic.title}</h2>
-        <p>
-          <strong>Número de edición:</strong> {comic.issueNumber}
-        </p>
-        <p>
-          <strong>Descripción:</strong>{" "}
-          {comic.description ? comic.description : "No disponible"}
-        </p>
-        <div>
-          <strong>Personajes:</strong>
-          {comic.characters.items.length > 0 ? (
-            <ul>
-              {charactersWithImages.map((character, index) => (
-                <li key={index}>
-                  {character.image ? (
-                    <img
-                      src={character.image}
-                      alt={character.name}
-                      className="imagen-personaje"
-                    />
-                  ) : (
-                    <span>No image</span>
-                  )}
-                  {character.name}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No hay personajes listados para este cómic.</p>
-          )}
+    <div className="detalle-overlay">
+      <div className="detalle-card">
+        <button className="close-button" onClick={onClose}>Cerrar</button>
+        <div className="detalle-header">
+          <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.title} />
+          <h2>{comic.title}</h2>
+          <p><strong>Issue Number:</strong> {comic.issueNumber}</p>
+        </div>
+        <div className="detalle-content">
+          <p><strong>Description:</strong> {comic.description || "No description available"}</p>
+          <h3>Characters:</h3>
+          <ul>
+            {charactersWithImages.map((character, index) => (
+              <li key={index}>
+                <img src={character.image} alt={character.name} />
+                {character.name}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
