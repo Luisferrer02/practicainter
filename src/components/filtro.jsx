@@ -46,7 +46,7 @@ function Filter({ setFilterText, setLimit, setPersonajeBuscado }) {
           value={personajeInput}
           onChange={handlePersonajeInputChange}
         />
-        <button onClick={handleBuscarClick}>Buscar</button>
+        <button id="btnbusca-personaje"onClick={handleBuscarClick}>Buscar por personaje</button>
       </div>
     </div>
   );

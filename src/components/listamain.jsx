@@ -23,7 +23,7 @@ function ListaMain({ comics, filterText }) {
 
   return (
     <div>
-      <button onClick={() => setShowFavs(!showFavs)}>
+      <button id="toggle-favs" onClick={() => setShowFavs(!showFavs)}>
         {showFavs ? "Ocultar Favoritos" : "Mostrar Favoritos"}
       </button>
       {showFavs && <ListaFavs favs={favs} toggleFav={toggleFav} setSelectedComic={setSelectedComic} />}

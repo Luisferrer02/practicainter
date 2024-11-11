@@ -260,4 +260,73 @@ body {
 .star {
   color: #ffcc00; /* Color de la estrella */
 }
+/* Estilo general para los inputs */
+input {
+  width: 100%; /* Asegura que los inputs sean de largo completo */
+  padding: 12px;
+  margin-bottom: 15px; /* Separación entre los inputs */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+  color: #333;
+  font-size: 1rem;
+  box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+}
 
+input:focus {
+  border-color: #007bff; /* Cambio de color del borde al hacer focus */
+  outline: none;
+}
+
+/* Estilo general para los botones */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 2px; /* Very light margin */
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Estilo específico para el toggle de favoritos */
+#toggle-favs {
+  background-color: #ffcc00; /* Color de fondo para el toggle */
+  color: white;
+}
+
+#toggle-favs.active {
+  background-color: #28a745; /* Color de fondo cuando está activo */
+}
+
+/* Estilo para el botón de búsqueda */
+#btnbusca-personaje {
+  background-color: #007bff;
+  color: white;
+}
+
+#btnbusca-personaje:hover {
+  background-color: #0056b3;
+}
+
+/* Alineación de los inputs y botones */
+input {
+  display: block; /* Asegura que cada input esté en su propia línea */
+  width: 100%;
+}
+
+button {
+  display: inline-block; /* Asegura que los botones no sean tan anchos */
+  width: auto; /* Permite que los botones tengan un ancho automático */
+}
+
+/* Estilo para el contenedor de los inputs y botones */
+.input-container {
+  max-width: 500px; /* Ancho máximo para los inputs y botones */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  padding: 20px;
+}
