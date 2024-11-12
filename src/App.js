@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ListaMain from './components/listamain';
-//import ListaFavs from './components/listafavs';
 import Filter from './components/filtro';
 import md5 from 'crypto-js/md5';
 import logo from './resources/marvel.png';

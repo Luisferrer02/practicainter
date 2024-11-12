@@ -8,7 +8,11 @@ function DetalleComic({ comic, onClose }) {
   useEffect(() => {
     const fetchCharacterDetails = async (resourceURI) => {
       // Agregar los parámetros de autenticación a la URL
+      if (resourceURI.startsWith('http://')) {
+        resourceURI = resourceURI.replace('http://', 'https://');
+      }
       const url = `${resourceURI}?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+      console.log(url);
       const response = await fetch(url);
       const data = await response.json();
       return data.data.results[0]; // Extraer el primer personaje de los datos
