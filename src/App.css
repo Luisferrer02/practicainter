@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css2?family=Bangers&display=swap);
+
+.comic-card h3 {
+  font-family: 'Bangers', cursive;
+}
+
 /* Estilos globales y generales */
 html, body {
   margin: 0;
@@ -117,14 +123,14 @@ body {
 
 
 .detalle-content {
-  margin-top: 15px;
+  flex: 1; /* Permite que el contenido textual use todo el espacio restante */
+  overflow-y: auto; /* Permite que el contenido sea scrolleable si es necesario */
   font-size: 1.1rem;
-  font-family: 'Roboto', sans-serif; /* Fuente más interesante */
+  font-family: 'Roboto', sans-serif;
 }
-
-/* Estilos generales */
+/* Estilo para la lista de personajes */
 .detalle-content ul {
-  list-style-type: none; /* Eliminar los puntos de la lista */
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -132,14 +138,14 @@ body {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .detalle-content li img {
-  width: 100px; /* Tamaño ajustado para las imágenes de los personajes */
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 10px;
+  width: 50px; /* Tamaño más pequeño para las imágenes de los personajes */
+  height: 50px;
+  border-radius: 50%; /* Imagen circular */
+  margin-right: 10px; /* Espacio entre la imagen del personaje y el texto */
 }
 
 .detalle-content li span {
@@ -148,16 +154,17 @@ body {
 
 /* Imagen del cómic (thumbnail) en detalle */
 .detalle-header img {
-  max-width: 100%; /* Aumenta el tamaño de la imagen del cómic en detalle */
-  height: auto;
-  max-height: 450px; /* Mejora el tamaño de la imagen */
-  display: block;
-  margin: 0 auto 15px auto; /* Centra la imagen horizontalmente */
-  object-fit: contain; /* Asegura que la imagen se mantenga proporcional */
+  max-width: 50%; /* Limita el ancho de la imagen para que deje espacio a la descripción */
+  max-height: 100%; /* Usa la altura completa permitida */
+  object-fit: cover; /* Asegura que la imagen se ajuste bien */
+  margin-right: 20px; /* Espacio entre la imagen y el contenido */
+  border-radius: 5px; /* Añade bordes redondeados */
 }
 
 /* Detalle de la tarjeta de cómic */
 .detalle-card {
+  display: flex; /* Coloca los elementos en línea horizontal */
+  align-items: flex-start; /* Alinea los elementos al principio */
   background-color: #fff;
   max-height: 90vh;
   width: 60%;
@@ -167,6 +174,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: relative;
 }
+
 
 /* Botón de cerrar detalle */
 .close-button {
@@ -199,7 +207,13 @@ body {
   }
 
   .detalle-card {
-    width: 80%; /* Haz que el detalle ocupe un mayor porcentaje en pantallas pequeñas */
+    flex-direction: column; /* Cambia la disposición a vertical en pantallas pequeñas */
+  }
+
+  .detalle-header img {
+    max-width: 100%; /* La imagen ocupa todo el ancho disponible */
+    margin-right: 0; /* Elimina el margen derecho */
+    margin-bottom: 15px; /* Añade espacio debajo de la imagen */
   }
 
   .App {
