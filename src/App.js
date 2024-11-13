@@ -4,6 +4,8 @@ import Filter from './components/filtro';
 import md5 from 'crypto-js/md5';
 import logo from './resources/marvel.png';
 
+//Cada vez para actualizar los cambios hacer npm run deploy
+
 const publicKey = process.env.REACT_APP_PUBLIC_KEY;
 const privateKey = process.env.REACT_APP_PRIVATE_KEY;
 const ts = Date.now().toString();
